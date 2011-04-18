@@ -26,6 +26,11 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" turn on word highlighting
+nmap <silent> <leader>n :set hlsearch!<CR>
+
+set guifont=Monaco:h13
+set lines=60 columns=140
 " show line numbers
 set number
 " only consider case if first word is capitalized
@@ -43,6 +48,10 @@ set smartindent
 set wrap
 " Don't split words
 set lbr
+
+" always open NERDTree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
