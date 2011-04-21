@@ -29,7 +29,7 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 " turn on word highlighting
 nmap <silent> <leader>n :set hlsearch!<CR>
 
-set guifont=Monaco:h13
+set guifont=Monaco:h11
 set lines=60 columns=140
 " show line numbers
 set number
