@@ -4,6 +4,3 @@
 [submodule "bundle/mru"]
 	path = bundle/mru
 	url = https://github.com/vim-scripts/MRU.git
-[submodule "bundle/debug"]
-	path = bundle/debug
-	url = https://github.com/jabapyth/vim-debug.git
