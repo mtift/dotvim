@@ -30,7 +30,7 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <silent> <leader>n :set hlsearch!<CR>
 
 set guifont=Monaco:h11
-set lines=60 columns=140
+" set lines=60 columns=140
 " show line numbers
 set number
 " only consider case if first word is capitalized
@@ -43,15 +43,15 @@ set softtabstop=2
 set autoindent
 set smartindent
 " Drupal is code typically 80 characters wide
-" set columns=80
+" columns=80
 " Wrap text
 set wrap
 " Don't split words
 set lbr
 
 " always open NERDTree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
