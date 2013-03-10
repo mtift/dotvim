@@ -14,3 +14,7 @@
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = https://github.com/Valloric/YouCompleteMe.git
+  ignore = dirty
