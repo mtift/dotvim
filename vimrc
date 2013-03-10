@@ -18,7 +18,7 @@ call pathogen#helptags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set default color scheme
-colorscheme desert
+colorscheme wombat 
 
 " Set default fonts based on OS
 let os = substitute(system('uname'), "\n", "", "")
