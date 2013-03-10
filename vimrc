@@ -2,6 +2,17 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Adding plugins using git submodules
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cd ~/.vim
+" git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+" git add .
+" git commit -m 'Install Fugitive.vim bundle as a submodule.'
+"
+" --> Then add the line 'ignore = dirty' to the .gitmodules file for each submodule
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,8 +97,9 @@ map <Leader>h <C-W>h
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
-map <Leader>n :NERDTreeToggle<CR>
 
+" Turn on NERDTree 
+map <Leader>n :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
