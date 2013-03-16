@@ -21,3 +21,4 @@
 [submodule "xdebug"]
 	path = xdebug
 	url = git://github.com/derickr/xdebug.git
+  ignore = dirty

@@ -8,10 +8,10 @@ call pathogen#helptags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cd ~/.vim
 " git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+" add the line 'ignore = dirty' to the .gitmodules file for each submodule
 " git add .
 " git commit -m 'Install Fugitive.vim bundle as a submodule.'
-"
-" --> Then add the line 'ignore = dirty' to the .gitmodules file for each submodule
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
