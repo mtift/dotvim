@@ -232,7 +232,9 @@ set smartindent
 set shiftround
 
 " Fix Newline At End Of File error 
-autocmd FileType php setlocal noeol binary fileformat=dos
+"autocmd FileType php setlocal noeol binary fileformat=dos
+"autocmd FileType inc setlocal noeol binary fileformat=dos
+set fileformats+=dos
 
 " View Processing .pde documents as Java code
 if has("autocmd")
@@ -249,3 +251,6 @@ filetype plugin on
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+
+" Disable swap file creation
+set noswapfile
