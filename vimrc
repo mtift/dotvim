@@ -64,13 +64,17 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
+set smartindent
 
 if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
+  " Use PHP for .module, .install, and other Drupal file types
+  augroup module:wq
     autocmd BufRead,BufNewFile *.module set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
   augroup END
 endif
 syntax on
@@ -78,10 +82,21 @@ syntax on
 let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
 " let g:syntastic_phpcs_disable=1
 
-" Drupal is code typically 80 characters wide
-" columns=80
+" Move down a single row on the screen (not the next line number)
+nmap j gj
+nmap k gk
 
+" Drupal *code* comments are typically less than 80 characters wide
+":highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+":match OverLength '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$'
 
+" Highlight *all* chars that go over the 80-column limit
+:highlight OverLength ctermbg=blue ctermfg=white guibg=blue guifg=white
+:match OverLength '\%81v.*'
+
+" Highlight redundant whitespaces and tabs
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Shortcut Keys
@@ -227,7 +242,6 @@ set noeb vb t_vb=
 " only consider case if first word is capitalized
 set ignorecase smartcase
 set wildmenu
-set smartindent
 " indent/outdent to nearest tabstops
 set shiftround
 
