@@ -18,13 +18,13 @@ call pathogen#helptags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set default color scheme
-colorscheme wombat 
+colorscheme wombat
 
 " Set default fonts based on OS
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
   set guifont=Menlo:h16
-  set lines=40 columns=140
+  " set lines=40 columns=140
 elseif os == "Linux"
   " Looks good in Debian
   set guifont=Monospace\ 12
@@ -36,14 +36,12 @@ elseif os == "Linux"
   "set lines=35 columns=160
 endif
 
-" turn on word highlighting
-nmap <silent> <leader>n :set hlsearch!<CR>
-
 " show line numbers
 set number
 
 " Wrap text
 set wrap
+
 " Don't split words
 set lbr
 
@@ -53,6 +51,9 @@ set lbr
 
 " Set default window position (upper left) and size
 winpos 0 0
+
+" turn on word highlighting
+set hlsearch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -117,7 +118,7 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
-" Turn on NERDTree 
+" Turn on NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
 " upper/lower word
@@ -190,7 +191,7 @@ else
 
   imap <A-]> <Esc>>>i
   imap <A-[> <Esc><<i
- 
+
   " Bubble single lines
   nmap <C-Up> [e
   nmap <C-Down> ]e
@@ -245,7 +246,7 @@ set wildmenu
 " indent/outdent to nearest tabstops
 set shiftround
 
-" Fix Newline At End Of File error 
+" Fix Newline At End Of File error
 "autocmd FileType php setlocal noeol binary fileformat=dos
 "autocmd FileType inc setlocal noeol binary fileformat=dos
 set fileformats+=dos

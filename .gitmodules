@@ -1,24 +1,28 @@
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+  path = bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
   ignore = dirty
 [submodule "bundle/mru"]
-	path = bundle/mru
-	url = https://github.com/vim-scripts/MRU.git
+  path = bundle/mru
+  url = https://github.com/vim-scripts/MRU.git
   ignore = dirty
 [submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
+  path = bundle/nerdcommenter
+  url = https://github.com/scrooloose/nerdcommenter
   ignore = dirty
 [submodule "bundle/fugitive"]
-	path = bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+  path = bundle/fugitive
+  url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
 [submodule "bundle/youcompleteme"]
-	path = bundle/youcompleteme
-	url = https://github.com/Valloric/YouCompleteMe.git
+  path = bundle/youcompleteme
+  url = https://github.com/Valloric/YouCompleteMe.git
   ignore = dirty
 [submodule "xdebug"]
-	path = xdebug
-	url = git://github.com/derickr/xdebug.git
+  path = xdebug
+  url = git://github.com/derickr/xdebug.git
+  ignore = dirty
+[submodule "syntastic"]
+  path = syntastic
+  url = https://github.com/scrooloose/syntastic.git
   ignore = dirty
