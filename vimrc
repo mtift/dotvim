@@ -1,7 +1,7 @@
 " Activate Pathogen plugin (should be at top of .vimrc)
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
+" call pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Adding plugins using git submodules

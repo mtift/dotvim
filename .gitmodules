@@ -18,11 +18,11 @@
   path = bundle/youcompleteme
   url = https://github.com/Valloric/YouCompleteMe.git
   ignore = dirty
-[submodule "xdebug"]
-  path = xdebug
-  url = git://github.com/derickr/xdebug.git
-  ignore = dirty
-[submodule "syntastic"]
-  path = syntastic
+[submodule "bundle/syntastic"]
+  path = bundle/syntastici
   url = https://github.com/scrooloose/syntastic.git
+  ignore = dirty
+[submodule "bundle/xdebug"]
+  path = bundle/xdebug
+  url = git://github.com/derickr/xdebug.git
   ignore = dirty
