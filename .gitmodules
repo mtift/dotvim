@@ -19,10 +19,6 @@
   url = https://github.com/Valloric/YouCompleteMe.git
   ignore = dirty
 [submodule "bundle/syntastic"]
-  path = bundle/syntastici
+  path = bundle/syntastic
   url = https://github.com/scrooloose/syntastic.git
-  ignore = dirty
-[submodule "bundle/xdebug"]
-  path = bundle/xdebug
-  url = git://github.com/derickr/xdebug.git
   ignore = dirty
