@@ -23,7 +23,7 @@ colorscheme wombat
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
   set guifont=Menlo:h16
-  " set lines=40 columns=140
+  set lines=42 columns=108
 elseif os == "Linux"
   " Looks good in Debian
   set guifont=Monospace\ 12
@@ -38,8 +38,11 @@ endif
 " show line numbers
 set number
 
+" show the line and column number of the cursor position
+set ruler
+
 " Wrap text
-set wrap
+set nowrap
 
 " Don't split words
 set lbr
@@ -53,6 +56,13 @@ winpos 0 0
 
 " turn on word highlighting
 set hlsearch
+
+" make cursor a line rather than a square
+if has("autocmd")
+  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,8 +113,10 @@ match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set <Leader>
-let mapleader = "\\"
-let g:mapleader = "\\"
+"let mapleader = "\\"
+"let g:mapleader = "\\"
+let mapleader = ","
+let g:mapleader = ","
 
 " Allow for use of cut and past in gvim
 nmap <C-V> "+gP
