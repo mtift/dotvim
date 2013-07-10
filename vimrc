@@ -22,8 +22,8 @@ colorscheme wombat
 " Set default fonts based on OS
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
-  set guifont=Menlo:h16
-  set lines=42 columns=108
+  set guifont=Menlo:h15
+  set lines=44 columns=160
 elseif os == "Linux"
   " Looks good in Debian
   set guifont=Monospace\ 12
@@ -42,7 +42,11 @@ set number
 set ruler
 
 " Wrap text
-set nowrap
+set wrap
+set linebreak
+
+" list disables linebreak
+set nolist
 
 " Don't split words
 set lbr
@@ -64,6 +68,12 @@ if has("autocmd")
   au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
 endif
 
+" Enable automatic folds
+set foldmethod=syntax
+set foldlevelstart=1
+let javaScript_fold=1         " JavaScript
+let php_folding=1             " PHP
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Drupal
@@ -75,6 +85,10 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+
+" Change to comply with PSR-0
+set tabstop=4
+set shiftwidth=4
 
 if has("autocmd")
   " Use PHP for .module, .install, and other Drupal file types
@@ -96,13 +110,8 @@ let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
 nmap j gj
 nmap k gk
 
-" Drupal *code* comments are typically less than 80 characters wide
-":highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-":match OverLength '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$'
-
-" Highlight *all* chars that go over the 80-column limit
-:highlight OverLength ctermbg=blue ctermfg=white guibg=blue guifg=white
-:match OverLength '\%81v.*'
+" Highlight column 80
+set colorcolumn=80
 
 " Highlight redundant whitespaces and tabs
 highlight RedundantSpaces ctermbg=red guibg=red
