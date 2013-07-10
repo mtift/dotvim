@@ -71,8 +71,19 @@ endif
 " Enable automatic folds
 set foldmethod=syntax
 set foldlevelstart=1
-let javaScript_fold=1         " JavaScript
+" let javaScript_fold=1         " JavaScript
 let php_folding=1             " PHP
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => JavaScript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-javascript plugin settings
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
