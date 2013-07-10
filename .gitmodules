@@ -29,6 +29,3 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
-[submodule "bundle/jslint.vim"]
-	path = bundle/jslint.vim
-	url = https://github.com/hallettj/jslint.vim.git
