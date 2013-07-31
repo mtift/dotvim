@@ -69,10 +69,10 @@ if has("autocmd")
 endif
 
 " Enable automatic folds
-set foldmethod=syntax
-set foldlevelstart=1
+" set foldmethod=syntax
+" set foldlevelstart=1
 " let javaScript_fold=1         " JavaScript
-let php_folding=1             " PHP
+" let php_folding=1             " PHP
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,8 +98,8 @@ set autoindent
 set smartindent
 
 " Change to comply with PSR-0
-set tabstop=4
-set shiftwidth=4
+"set tabstop=4
+"set shiftwidth=4
 
 if has("autocmd")
   " Use PHP for .module, .install, and other Drupal file types
