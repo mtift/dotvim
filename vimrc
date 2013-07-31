@@ -2,15 +2,6 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Adding plugins using git submodules
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cd ~/.vim
-" git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-" add the line 'ignore = dirty' to the .gitmodules file for each submodule
-" git add .
-" git commit -m 'Install Fugitive.vim bundle as a submodule.'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
