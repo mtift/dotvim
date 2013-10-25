@@ -18,10 +18,6 @@
   path = bundle/youcompleteme
   url = https://github.com/Valloric/YouCompleteMe.git
   ignore = dirty
-[submodule "bundle/syntastic"]
-  path = bundle/syntastic
-  url = https://github.com/scrooloose/syntastic.git
-  ignore = dirty
 [submodule "bundle/ctrlp"]
   path = bundle/ctrlp
   url = https://github.com/kien/ctrlp.vim.git
