@@ -30,10 +30,6 @@
   path = bundle/vim-css-color
   url = https://github.com/skammer/vim-css-color.git
   ignore = dirty
-[submodule "bundle/jslint.vim"]
-  path = bundle/jslint.vim
-  url = https://github.com/hallettj/jslint.vim.git
-  ignore = dirty
 [submodule "bundle/Command-T"]
   path = bundle/Command-T
   url = https://github.com/wincent/Command-T.git
