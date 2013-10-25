@@ -17,7 +17,7 @@ Adding submodules:
     cd ~/.vim
     git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
     add the line 'ignore = dirty' to the .gitmodules file for each submodule
-    git submodule initgit
+    git submodule init
     git add .
     git commit -m "Install Fugitive.vim bundle as a submodule."
 
