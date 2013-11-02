@@ -17,13 +17,13 @@ if os == "Darwin"
   set lines=44 columns=160
 elseif os == "Linux"
   " Looks good in Debian
-  set guifont=Monospace\ 12
-  set lines=30 columns=140
+  " set guifont=Monospace\ 12
+  " set lines=30 columns=140
   " Make the width of the text file = the column width
   set textwidth=140
   " Used with Ubuntu
-  "set guifont=Ubuntu\ Mono\ 14
-  "set lines=35 columns=160
+  set guifont=Ubuntu\ Mono\ 14
+  set lines=39 columns=150
 endif
 
 " show line numbers
