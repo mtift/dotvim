@@ -17,13 +17,13 @@ if os == "Darwin"
   set lines=44 columns=160
 elseif os == "Linux"
   " Looks good in Debian
-  " set guifont=Monospace\ 12
-  " set lines=30 columns=140
+  set guifont=Monospace\ 12
+  set lines=30 columns=130
   " Make the width of the text file = the column width
-  set textwidth=140
+  " set textwidth=140
   " Used with Ubuntu
-  set guifont=Ubuntu\ Mono\ 14
-  set lines=39 columns=150
+  " set guifont=Ubuntu\ Mono\ 14
+  " set lines=39 columns=150
 endif
 
 " show line numbers
@@ -129,10 +129,11 @@ match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
 let mapleader = ","
 let g:mapleader = ","
 
-" Allow for use of cut and past in gvim
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
+" Allow for use of copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 " Not sure...
 map <Leader>h <C-W>h
