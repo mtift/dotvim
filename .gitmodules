@@ -31,6 +31,6 @@
   url = https://github.com/wincent/Command-T.git
   ignore = dirty
 [submodule "bundle/vdebug"]
-	path = bundle/vdebug
-	url = https://github.com/joonty/vdebug.git
+  path = bundle/vdebug
+  url = https://github.com/joonty/vdebug.git
   ignore = dirty
