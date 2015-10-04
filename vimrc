@@ -254,22 +254,6 @@ set noswapfile
 " => Application Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Word Processing mode
-func! WordProcessorMode()
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  map j gj
-  map k gk
-  setlocal spell spelllang=en_us
-  "set thesaurus+=/Users/mtift/.vim/thesaurus/mthesaur.txt
-  set thesaurus
-  set complete+=s
-  set formatprg=par
-  setlocal wrap
-  setlocal linebreak
-endfu
-com! PM call WordProcessorMode()
-
 " vdebug settings
 if !exists("g:vdebug_options")
   let g:vdebug_options = {}
@@ -279,3 +263,27 @@ let g:vdebug_options['max_children'] = 128
 ":let g:vdebug_features['max_depth'] = 2048
 ":let g:vdebug_options['watch_window_style'] = 'compact'
 ":let g:vdebug_options['server'] = ''
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Word Processing mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  map j gj
+  map k gk
+  setlocal spell spelllang=en_us
+  set thesaurus+=/home/mtift/.vim/thesaurus/mthesaur.txt
+  set thesaurus
+  set complete+=s
+  set formatprg=par
+  setlocal wrap
+  setlocal linebreak
+  set colorcolumn=0
+  set number!
+endfu
+com! PM call WordProcessorMode()
+
