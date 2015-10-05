@@ -8,23 +8,22 @@ call pathogen#helptags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set default color scheme
-"colorscheme wombat
-colorscheme desert
+colorscheme wombat
+"colorscheme desert
 
 " Set default fonts based on OS
 let os = substitute(system('uname'), "\n", "", "")
-if os == "Darwin"
-  set guifont=Menlo:h15
-  set lines=44 columns=160
-elseif os == "Linux"
+if os == "Linux"
   " Looks good in Debian
   set guifont=Monospace\ 12
   set lines=30 columns=130
   " Make the width of the text file = the column width
-  " set textwidth=140
+  set textwidth=130
   " Used with Ubuntu
   " set guifont=Ubuntu\ Mono\ 14
-  " set lines=39 columns=150
+elseif os == "Darwin"
+  set guifont=Menlo:h15
+  set lines=30 columns=140
 endif
 
 " show line numbers
@@ -63,16 +62,6 @@ endif
 " let php_folding=1             " PHP
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => JavaScript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" vim-javascript plugin settings
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Drupal
@@ -104,10 +93,6 @@ syntax on
 
 let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
 " let g:syntastic_phpcs_disable=1
-
-" Move down a single row on the screen (not the next line number)
-nmap j gj
-nmap k gk
 
 " Highlight column 80
 set colorcolumn=80
@@ -143,11 +128,11 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
-" Turn on NERDTree
-map <Leader>n :NERDTreeToggle<CR>
-
 " Set commenting key combo
 map <Leader>/ <plug>NERDCommenterToggle
+
+" Turn on NERDTree
+map <Leader>n :NERDTreeToggle<CR>
 
 " always open NERDTree
 " autocmd VimEnter * NERDTree
@@ -227,7 +212,7 @@ set shiftround
 " Fix Newline At End Of File error
 "autocmd FileType php setlocal noeol binary fileformat=dos
 "autocmd FileType inc setlocal noeol binary fileformat=dos
-set fileformats+=dos
+"set fileformats+=dos
 
 " View Processing .pde documents as Java code
 if has("autocmd")
@@ -248,28 +233,10 @@ filetype plugin on
 " Disable swap file creation
 set noswapfile
 
+" Editing a protected file as 'sudo'
+cmap SW w !sudo tee % >/dev/null<CR>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Application Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" vdebug settings
-if !exists("g:vdebug_options")
-  let g:vdebug_options = {}
-endif
-let g:vdebug_options["break_on_open"] = 0
-let g:vdebug_options['max_children'] = 128
-":let g:vdebug_features['max_depth'] = 2048
-":let g:vdebug_options['watch_window_style'] = 'compact'
-":let g:vdebug_options['server'] = ''
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Word Processing mode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" Word Processing mode
 func! WordProcessorMode()
   setlocal formatoptions=1
   setlocal noexpandtab
@@ -285,5 +252,16 @@ func! WordProcessorMode()
   set colorcolumn=0
   set number!
 endfu
-com! PM call WordProcessorMode()
+com! WP call WordProcessorMode()
+
+" vdebug settings
+if !exists("g:vdebug_options")
+  let g:vdebug_options = {}
+endif
+let g:vdebug_options["break_on_open"] = 0
+let g:vdebug_options['max_children'] = 128
+":let g:vdebug_features['max_depth'] = 2048
+":let g:vdebug_options['watch_window_style'] = 'compact'
+":let g:vdebug_options['server'] = ''
+
 

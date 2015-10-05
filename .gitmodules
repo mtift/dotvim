@@ -18,7 +18,3 @@
   path = bundle/vdebug
   url = https://github.com/joonty/vdebug.git
   ignore = dirty
-[submodule "bundle/vim-markdown-folding"]
-	path = bundle/vim-markdown-folding
-	url = https://github.com/nelstrom/vim-markdown-folding.git
-  ignore = dirty
