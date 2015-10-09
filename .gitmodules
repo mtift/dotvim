@@ -18,3 +18,7 @@
   path = bundle/vdebug
   url = https://github.com/joonty/vdebug.git
   ignore = dirty
+[submodule "bundle/vim-online-thesaurus"]
+  path = bundle/vim-online-thesaurus
+  url = https://github.com/beloglazov/vim-online-thesaurus.git
+  ignore = dirty

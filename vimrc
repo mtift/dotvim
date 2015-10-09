@@ -243,14 +243,13 @@ func! WordProcessorMode()
   map j gj
   map k gk
   setlocal spell spelllang=en_us
-  set thesaurus+=/home/mtift/.vim/thesaurus/mthesaur.txt
-  set thesaurus
   set complete+=s
   set formatprg=par
   setlocal wrap
   setlocal linebreak
   set colorcolumn=0
-  set number!
+  let g:online_thesaurus_map_keys = 0
+  nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 endfu
 com! WP call WordProcessorMode()
 
