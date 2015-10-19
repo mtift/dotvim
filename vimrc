@@ -24,6 +24,18 @@ if os == "Linux"
 elseif os == "Darwin"
   set guifont=Menlo:h15
   set lines=30 columns=140
+elseif os =~ "CYGWIN"
+  " Used on Windows
+endif
+
+" GUI-specific settings
+if has("gui_running")
+  " make cursor a line rather than a square
+  if has("autocmd")
+    au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+    au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+    au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+  endif
 endif
 
 " show line numbers
@@ -47,13 +59,6 @@ winpos 0 0
 
 " turn on word highlighting
 set hlsearch
-
-" make cursor a line rather than a square
-if has("autocmd")
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-endif
 
 " Enable automatic folds
 " set foldmethod=syntax
