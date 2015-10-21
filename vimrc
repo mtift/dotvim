@@ -11,25 +11,26 @@ call pathogen#helptags()
 colorscheme wombat
 "colorscheme desert
 
-" Set default fonts based on OS
+" Get the name of the operating system
 let os = substitute(system('uname'), "\n", "", "")
-if os == "Linux"
-  " Looks good in Debian
-  set guifont=Monospace\ 12
-  set lines=30 columns=130
-  " Make the width of the text file = the column width
-  set textwidth=130
-  " Used with Ubuntu
-  " set guifont=Ubuntu\ Mono\ 14
-elseif os == "Darwin"
-  set guifont=Menlo:h15
-  set lines=30 columns=140
-elseif os =~ "CYGWIN"
-  " Used on Windows
-endif
 
 " GUI-specific settings
 if has("gui_running")
+  if os == "Linux"
+    " Looks good in Debian
+    set guifont=Monospace\ 12
+    set lines=30 columns=130
+    " Make the width of the text file = the column width
+    set textwidth=130
+    " Used with Ubuntu
+    " set guifont=Ubuntu\ Mono\ 14
+  elseif os == "Darwin"
+    set guifont=Menlo:h15
+    set lines=30 columns=140
+  elseif os =~ "CYGWIN"
+    " Used on Windows
+  endif
+
   " make cursor a line rather than a square
   if has("autocmd")
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
@@ -85,7 +86,7 @@ set smartindent
 
 if has("autocmd")
   " Use PHP for .module, .install, and other Drupal file types
-  augroup module:wq
+  augroup module
     autocmd BufRead,BufNewFile *.module set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
@@ -237,6 +238,10 @@ filetype plugin on
 
 " Disable swap file creation
 set noswapfile
+
+" Disable backup
+set backupdir=~/.vimtmp,.
+set directory=~/.vimtmp,.
 
 " Editing a protected file as 'sudo'
 cmap SW w !sudo tee % >/dev/null<CR>
