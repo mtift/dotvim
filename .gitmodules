@@ -22,3 +22,10 @@
   path = bundle/vim-online-thesaurus
   url = https://github.com/beloglazov/vim-online-thesaurus.git
   ignore = dirty
+[submodule "bundle/syntastic"]
+  path = bundle/syntastic
+  url = https://github.com/scrooloose/syntastic.git
+  ignore = dirty
+[submodule "proselint"]
+	path = proselint
+	url = https://github.com/amperser/proselint.git

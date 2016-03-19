@@ -1,7 +1,7 @@
 " Activate Pathogen plugin (should be at top of .vimrc)
 "call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 set nocompatible
-call pathogen#helptags()
 execute pathogen#infect()
 
 
@@ -275,8 +275,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 
-"let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
+let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
 " let g:syntastic_phpcs_disable=1
+let g:syntastic_markdown_checkers = ['proselint']
+
+" The items listed in this array will not be checked by proselint
+" See https://github.com/amperser/proselint/tree/master/plugins/vim
+let g:syntastic_text_proselint_quiet_messages = {
+  \ 'regex': [
+  \   '\m^butterick\.symbols\.curly_quotes',
+  \ ] }
 
 " vdebug settings
 if !exists("g:vdebug_options")
