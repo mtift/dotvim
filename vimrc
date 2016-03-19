@@ -1,6 +1,8 @@
 " Activate Pathogen plugin (should be at top of .vimrc)
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
+set nocompatible
 call pathogen#helptags()
+execute pathogen#infect()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,9 +99,6 @@ if has("autocmd")
 endif
 syntax on
 
-let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
-" let g:syntastic_phpcs_disable=1
-
 " Highlight column 80
 set colorcolumn=80
 
@@ -127,6 +126,7 @@ cnoremap <C-A> <C-C>gggH<C-O>G
 vmap <C-c> "+y
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+" Find a way to map <C-R>" to C-v on the command line
 
 " Not sure...
 map <Leader>h <C-W>h
@@ -262,6 +262,21 @@ func! WordProcessorMode()
   nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 endfu
 com! WP call WordProcessorMode()
+
+" Syntastic settings
+"let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
+
+"let g:syntastic_phpcs_conf="--standard=DrupalCodingStandard"
+" let g:syntastic_phpcs_disable=1
 
 " vdebug settings
 if !exists("g:vdebug_options")
