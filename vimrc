@@ -249,7 +249,6 @@ cmap SW w !sudo tee % >/dev/null<CR>
 " Word Processing mode
 func! WordProcessorMode()
   setlocal formatoptions=1
-  setlocal noexpandtab
   map j gj
   map k gk
   setlocal spell spelllang=en_us
