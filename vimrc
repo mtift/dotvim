@@ -285,6 +285,9 @@ let g:syntastic_text_proselint_quiet_messages = {
   \   '\m^butterick\.symbols\.curly_quotes',
   \ ] }
 
+" Enable neocomplete on startup
+let g:neocomplete#enable_at_startup = 1
+
 " vdebug settings
 if !exists("g:vdebug_options")
   let g:vdebug_options = {}

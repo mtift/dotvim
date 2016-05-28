@@ -29,3 +29,8 @@
 [submodule "proselint"]
 	path = proselint
 	url = https://github.com/amperser/proselint.git
+  ignore = dirty
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim
+  ignore = dirty
