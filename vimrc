@@ -258,6 +258,7 @@ func! WordProcessorMode()
   setlocal linebreak
   set colorcolumn=0
   let g:online_thesaurus_map_keys = 0
+  let g:neocomplete#disable_auto_complete = 1
   nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 endfu
 com! WP call WordProcessorMode()
