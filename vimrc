@@ -1,8 +1,8 @@
 " Activate Pathogen plugin (should be at top of .vimrc)
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
-set nocompatible
 execute pathogen#infect()
+"set nocompatible
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -21,7 +21,8 @@ if has("gui_running")
   if os == "Linux"
     " Looks good in Debian
     set guifont=Monospace\ 12
-    set lines=30 columns=130
+    "set lines=30 columns=130
+    set lines=99 columns=150
     " Make the width of the text file = the column width
     set textwidth=130
     " Used with Ubuntu
@@ -140,9 +141,15 @@ map <Leader>/ <plug>NERDCommenterToggle
 " Turn on NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
+" Add a space when commenting
+let g:NERDCustomDelimiters = {
+  \ 'r': {'left': '# '},
+  \ 'php': {'left': '// '}
+\ }
+
 " always open NERDTree
-" autocmd VimEnter * NERDTree
-" autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -283,7 +290,9 @@ let g:syntastic_markdown_checkers = ['proselint']
 " See https://github.com/amperser/proselint/tree/master/plugins/vim
 let g:syntastic_text_proselint_quiet_messages = {
   \ 'regex': [
-  \   '\m^butterick\.symbols\.curly_quotes',
+  \   '\m^typography\.symbols\.curly_quotes',
+  \   '\m^typography\.symbols\.multiplication_symbol',
+  \   '\m^leonard\.exclamation',
   \ ] }
 
 " Enable neocomplete on startup
