@@ -233,6 +233,11 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.pde set filetype=java
 endif
 
+" Allow for folding Markdown files in Vim
+if has("autocmd")
+  filetype plugin indent on
+endif
+
 " Turn on CSS auto-complete
 set omnifunc=csscomplete#CompleteCSS
 
