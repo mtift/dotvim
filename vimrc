@@ -237,6 +237,9 @@ endif
 if has("autocmd")
   filetype plugin indent on
 endif
+" Open with all folds open
+" For additional options, see http://vimcasts.org/episodes/how-to-fold
+autocmd BufWinEnter * normal! zR
 
 " Turn on CSS auto-complete
 set omnifunc=csscomplete#CompleteCSS
