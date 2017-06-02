@@ -38,7 +38,3 @@
   path = bundle/taglist
   url = https://github.com/vim-scripts/taglist.vim.git
   ignore = dirty
-[submodule "bundle/vim-markdown-folding"]
-  path = bundle/vim-markdown-folding
-  url = https://github.com/mtift/vim-markdown-folding.git
-  ignore = dirty
