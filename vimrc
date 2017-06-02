@@ -318,3 +318,52 @@ let g:vdebug_options['max_children'] = 128
 ":let g:vdebug_options['server'] = ''
 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Digraphs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" To type a character such as ṃ, type CTRL-k m ,
+" The number (e.g. 7747) is the 'decimal' version of the character
+" For more information, see:
+"   http://www.chakra.lv/blog/2016/10/19/transliterating-sanskrit-into-russian
+"   https://r12a.github.io/apps/conversion/
+"   https://sanctum.geek.nz/arabesque/special-characters-in-vim
+
+" Built in digraphs:
+" digraph A-  256 " Ā
+" digraph a-  257 " ā
+" digraph I-  298 " Ī
+" digraph i-  299 " ī
+" digraph U-  362 " Ū
+" digraph u-  363 " ū
+" digraph M. 7744 " Ṁ
+" digraph m. 7745 " ṁ
+" digraph N. 7748 " Ṅ
+" digraph n. 7749 " ṅ
+" digraph N?  209 " Ñ
+" digraph n?  241 " ñ
+" digraph S'  346 " Ś
+" digraph s'  347 " ś
+
+" Custom digraphs:
+digraph R, 7770 " Ṛ
+digraph r, 7771 " ṛ
+digraph R- 7772 " Ṝ
+digraph r- 7773 " ṝ
+digraph L, 7734 " Ḷ
+digraph l, 7735 " ḷ
+digraph L- 7736 " Ḹ
+digraph l- 7737 " ḹ
+digraph M, 7746 " Ṃ
+digraph m, 7747 " ṃ
+digraph H, 7716 " Ḥ
+digraph h, 7717 " ḥ
+digraph T, 7788 " Ṭ
+digraph t, 7789 " ṭ
+digraph D, 7692 " Ḍ
+digraph d, 7693 " ḍ
+digraph N, 7750 " Ṇ
+digraph n, 7751 " ṇ
+digraph S, 7778 " Ṣ
+digraph s, 7779 " ṣ
