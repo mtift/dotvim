@@ -9,6 +9,17 @@ execute pathogen#infect()
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Define autocmd for some highlighting *before* the colorscheme is loaded
+augroup VimrcColors
+au!
+  autocmd ColorScheme * highlight Nouns ctermbg=DarkMagenta guibg=DarkMagenta
+  autocmd ColorScheme * highlight Prepositions ctermbg=DarkRed guibg=DarkRed
+  autocmd ColorScheme * highlight ToBe ctermbg=DarkCyan guibg=DarkCyan
+  autocmd ColorScheme * highlight Waste ctermbg=DarkBlue guibg=DarkBlue
+  autocmd ColorScheme * highlight Weasel ctermbg=DarkGreen guibg=DarkGreen
+  autocmd ColorScheme * highlight Omit guibg=#242424
+augroup END
+
 " Set default color scheme
 colorscheme wombat
 "colorscheme desert
@@ -276,6 +287,28 @@ func! WordProcessorMode()
   let g:online_thesaurus_map_keys = 0
   let g:neocomplete#disable_auto_complete = 1
   nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
+
+  " Highlight duplicate words
+  let s:dups=matchadd('Error', '\v(<\w+>)\_s*<\1>', 10)
+
+  " Highlight [weasel words](http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/)
+  let s:weasel=matchadd('Weasel', '\c\v<many>|<various>|<very>|<fairly>|<several>|<extremely>|<exceedingly>|<quite>|<remarkably>|<few>|<surprisingly>|<mostly>|<largely>|<huge>|<tiny>|<((are>|<is) a number)>|<excellent>|<interestingly>|<significantly>|<substantially>|<clearly>|<vast>|<relatively>|<completely>|<obviously>|<note that>|<particular>|<specific>|<manner>|<purposes>|<that is>|<which are>|<that are>|<differently>|<formally>|<in another words>|e\.g\.|i\.e\.|almost|etc\.|\w+ly', 10)
+
+  " Highlight to be verbs
+  let s:tobe=matchadd('ToBe', '\c\v<to be>|<am>|<is>|<are>|<was>|<were>|<be>|<been>\v\c', 10)
+
+  " Waste Words from http://writersdiet.com
+  let s:waste=matchadd('Waste', '\c\v<it>|<there>|<that>|<this>\v\c', 10)
+
+  " Waste Words from http://writersdiet.com
+  let s:prepositions=matchadd('Prepositions', '\c\v<in>|<by>|<for>|<of>\v\c', 10)
+
+  " Nouns from http://writersdiet.com
+  let s:nouns=matchadd('Nouns', '\c\v\w+(ion|ism|ty|ment|ness|ance|ence)\v\c', 10)
+
+  " Omit some words
+  let s:omit=matchadd('Omit', '\c\v<Foundation>|<is released>|<community>|<Tolerance>|<tolerance>\c\v', 10)
+
 endfu
 com! WP call WordProcessorMode()
 
