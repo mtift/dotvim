@@ -345,6 +345,12 @@ let g:vdebug_options['max_children'] = 128
 " digraph n?  241 " ñ
 " digraph S'  346 " Ś
 " digraph s'  347 " ś
+" digraph c, -> ç
+" digraph e' -> é
+" digraph o^ -> ô
+" digraph a! -> à
+" digraph u: -> ü
+" digraph =e -> €
 
 " Custom digraphs:
 digraph R, 7770 " Ṛ
