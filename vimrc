@@ -341,6 +341,9 @@ let g:syntastic_text_proselint_quiet_messages = {
   \   '\m^typography\.symbols\.multiplication_symbol',
   \   '\m^leonard\.exclamation',
   \ ] }
+" Disable Syntastic by default (enable with SyntasticCheck)
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 " Enable neocomplete on startup
 let g:neocomplete#enable_at_startup = 1
